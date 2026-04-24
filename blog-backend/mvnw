@@ -1,0 +1,22 @@
+#!/bin/sh
+# Maven wrapper script
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+WRAPPER_JAR="$SCRIPT_DIR/.mvn/wrapper/maven-wrapper.jar"
+WRAPPER_LAUNCHER=org.apache.maven.wrapper.MavenWrapperMain
+
+JAVA_HOME="${JAVA_HOME:-}"
+if [ -z "$JAVA_HOME" ]; then
+    JAVA_EXE="java"
+else
+    JAVA_EXE="$JAVA_HOME/bin/java"
+fi
+
+if [ ! -f "$WRAPPER_JAR" ]; then
+    echo "Maven wrapper jar not found at $WRAPPER_JAR"
+    exit 1
+fi
+
+exec "$JAVA_EXE" -classpath "$WRAPPER_JAR" \
+    "-Dmaven.multiModuleProjectDirectory=$SCRIPT_DIR" \
+    $WRAPPER_LAUNCHER "$@"
