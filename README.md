@@ -62,8 +62,8 @@
 
 ```bash
 # 克隆项目
-git clone https://github.com/YOUR_USERNAME/smart-blog.git
-cd smart-blog
+git clone https://github.com/xuehua6657/zhineng.git
+cd zhineng
 
 # 一键启动（MySQL + Redis + Backend）
 docker-compose up -d
